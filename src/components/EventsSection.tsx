@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Trophy, FilmStrip, Users, ArrowRight, CaretLeft, CaretRight, Star, Armchair, Quotes } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 interface EventsSectionProps {
   onOpenBooking: () => void;
@@ -117,7 +116,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
                   Игровые батлы по PS5 и бильярду с призами.
                 </p>
                 <div className="mt-4 flex items-center text-[#FF5500] text-sm font-bold gap-2 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                  Участвовать <ArrowRight size={16} />
+                  Участвовать →
                 </div>
               </div>
             </motion.div>
@@ -143,7 +142,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
                   Большой экран, объёмный звук и уютная атмосфера.
                 </p>
                 <div className="mt-4 flex items-center text-[#FF5500] text-sm font-bold gap-2 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                  Смотреть афишу <ArrowRight size={16} />
+                  Смотреть афишу →
                 </div>
               </div>
             </motion.div>
@@ -169,7 +168,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
                   Отличная компания, настолки и PS5.
                 </p>
                 <div className="mt-4 flex items-center text-[#FF5500] text-sm font-bold gap-2 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                  Забронировать стол <ArrowRight size={16} />
+                  Забронировать стол →
                 </div>
               </div>
             </motion.div>
@@ -178,7 +177,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
 
         </div>
 
-        {/* Bottom Row: 3 Social Proof Cards */}
+          {/* Bottom Row: 3 Social Proof Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           
           {/* Card 1: Что говорят гости */}
@@ -186,14 +185,14 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-base font-bold text-white">Что говорят гости</h4>
-                <div className="flex items-center gap-1 text-gray-400">
-                  <button className="p-1 rounded-md hover:bg-white/10" aria-label="Назад"><CaretLeft size={16} /></button>
-                  <button className="p-1 rounded-md hover:bg-white/10" aria-label="Вперед"><CaretRight size={16} /></button>
+                <div className="flex items-center gap-1 text-gray-400 font-bold">
+                  <button className="p-1 rounded-md hover:text-white" aria-label="Назад">‹</button>
+                  <button className="p-1 rounded-md hover:text-white" aria-label="Вперед">›</button>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Quotes size={24} weight="fill" className="text-[#FF5500] flex-shrink-0 mt-0.5" />
+                <div className="text-3xl text-[#FF5500] leading-none font-black font-display mt-[-4px]">"</div>
                 <p className="text-xs text-gray-300 leading-relaxed">
                   Отмечали день рождения — всё было на высшем уровне! Уютно, чисто, атмосфера супер, персонал топ. Обязательно вернёмся!
                 </p>
@@ -239,7 +238,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
                 className="btn-secondary px-4 py-2.5 text-xs font-bold inline-flex items-center gap-2"
               >
                 <span>Перейти в сообщество</span>
-                <ArrowRight size={14} />
+                →
               </a>
             </div>
 
@@ -257,25 +256,24 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
           <div className="ref-card p-6 flex items-center justify-between divide-x divide-white/10 text-center">
             
             <div className="px-2 flex-1">
-              <div className="text-2xl font-black text-white flex items-center justify-center gap-1">
-                <Star size={20} weight="fill" className="text-[#FF5500]" />
-                <span>4.7</span>
+              <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-600 mb-1 font-display">
+                4.7
               </div>
-              <div className="text-[11px] text-gray-400 mt-1">Рейтинг на Яндекс</div>
+              <div className="text-[11px] text-gray-400 font-bold">Рейтинг Яндекс</div>
             </div>
 
             <div className="px-2 flex-1">
-              <div className="flex justify-center text-[#FF5500] mb-1">
-                <Armchair size={24} weight="fill" />
+              <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 mb-1 font-display">
+                200+
               </div>
-              <div className="text-[11px] text-gray-400">Уютная атмосфера</div>
+              <div className="text-[11px] text-gray-400 font-bold">Настольных игр</div>
             </div>
 
             <div className="px-2 flex-1">
-              <div className="flex justify-center text-[#FF5500] mb-1">
-                <Users size={24} weight="fill" />
+              <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-1 font-display">
+                0₽
               </div>
-              <div className="text-[11px] text-gray-400">Для компаний и праздников</div>
+              <div className="text-[11px] text-gray-400 font-bold">Пробковый сбор</div>
             </div>
 
           </div>

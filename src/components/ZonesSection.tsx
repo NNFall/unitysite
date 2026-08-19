@@ -1,5 +1,4 @@
 import React from 'react';
-import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '../utils/motion';
 
@@ -12,28 +11,24 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
     {
       id: 'billiards',
       name: 'Игровая зона',
-      icon: GameController,
       desc: 'Бильярд, PlayStation 5, настолки и приставки для компании.',
       img: '/assets/ref/zone_billiards.jpg',
     },
     {
       id: 'cinema',
       name: 'Кинозал',
-      icon: Television,
       desc: 'Большой экран, объёмный звук и комфортные диваны.',
       img: '/assets/ref/zone_cinema.jpg',
     },
     {
       id: 'lounge',
       name: 'Лаунж и комнаты',
-      icon: Armchair,
       desc: 'Уютные зоны и отдельные комнаты для общения и отдыха.',
       img: '/assets/ref/zone_lounge.jpg',
     },
     {
       id: 'boardgames',
       name: 'Настольные игры',
-      icon: DiceFive,
       desc: 'Более 200 игр на любой вкус — от классики до новинок.',
       img: '/assets/ref/zone_boardgames.jpg',
     },

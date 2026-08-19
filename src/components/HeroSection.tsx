@@ -1,5 +1,4 @@
 import React from 'react';
-import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '../utils/motion';
 
@@ -58,54 +57,46 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </motion.p>
 
               {/* CTAs */}
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 pb-6">
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 pb-8">
                 <button
                   onClick={onOpenBooking}
-                  className="btn-primary px-8 py-4 text-[16px] font-bold flex items-center justify-center gap-2.5 shadow-glow-orange cursor-pointer rounded-xl"
+                  className="btn-primary px-8 py-4 text-[16px] flex items-center justify-center gap-2.5 cursor-pointer"
                 >
-                  <span>Забронировать</span>
-                  <ArrowRight size={18} weight="bold" />
+                  <span>Забронировать место</span>
                 </button>
 
                 <a
                   href="https://vk.com/unitysmr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary px-6 py-4 text-[15px] font-semibold flex items-center justify-center gap-2.5 rounded-xl border border-white/10"
+                  className="btn-secondary px-8 py-4 text-[16px] font-bold flex items-center justify-center gap-2.5 rounded-2xl border border-white/10"
                 >
-                  <div className="w-6 h-6 flex items-center justify-center text-[12px] font-black text-white flex-shrink-0">
-                    VK
-                  </div>
-                  <span>Перейти во ВКонтакте</span>
+                  <span>Мы ВКонтакте</span>
                 </a>
               </motion.div>
 
-              {/* Value strip — Single row with pipes */}
-              <motion.div variants={fadeInUp} className="flex flex-row items-center gap-4 pt-6 text-[14px] text-gray-300 border-t border-white/10 w-fit">
-                <div className="flex items-center gap-2">
-                  <MapPin size={18} weight="regular" className="text-white/60" />
-                  <span>Самара, ул. Гагарина, 118</span>
+              {/* Value strip — typographic, no icons */}
+              <motion.div variants={fadeInUp} className="flex flex-row flex-wrap items-center gap-x-6 gap-y-3 pt-6 text-[13px] font-bold tracking-wider uppercase text-gray-400 border-t border-white/5 w-fit">
+                <div className="hover:text-white transition-colors cursor-default">
+                  Гагарина, 118
                 </div>
                 
-                <div className="w-px h-5 bg-white/20" />
+                <div className="w-1.5 h-1.5 rounded-full bg-orange-500/50" />
                 
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-white/10 text-white flex items-center justify-center text-[10px] font-bold">M</div>
-                  <span>3 минуты от м. Советская</span>
+                <div className="hover:text-white transition-colors cursor-default">
+                  м. Советская
                 </div>
                 
-                <div className="w-px h-5 bg-white/20" />
+                <div className="w-1.5 h-1.5 rounded-full bg-orange-500/50" />
                 
-                <div className="flex items-center gap-2">
-                  <Coffee size={18} weight="regular" className="text-white/60" />
-                  <span>Можно со своей едой и напитками</span>
+                <div className="hover:text-white transition-colors cursor-default">
+                  0₽ Пробковый сбор
                 </div>
                 
-                <div className="w-px h-5 bg-white/20" />
+                <div className="w-1.5 h-1.5 rounded-full bg-orange-500/50" />
                 
-                <div className="flex items-center gap-2">
-                  <Star size={18} weight="regular" className="text-white/60" />
-                  <span>Рейтинг <strong className="text-white font-bold">4.7</strong></span>
+                <div className="hover:text-white transition-colors cursor-default">
+                  4.7 ★ Яндекс
                 </div>
               </motion.div>
 
