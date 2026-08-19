@@ -35,9 +35,9 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
               <img
                 src="/assets/ref/event_birthday.jpg"
                 alt="Дни рождения и праздники в UNITY"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-right scale-[1.25] group-hover:scale-[1.3] transition-transform duration-700 origin-right"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121824] via-[#121824]/50 to-black/30" />
+              <div className="absolute inset-0 bg-[#121824]/60 sm:bg-gradient-to-t sm:from-[#121824] sm:via-[#121824]/80 sm:to-black/40" />
             </div>
 
             {/* Slider Arrow Controls */}

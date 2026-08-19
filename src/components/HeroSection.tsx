@@ -22,9 +22,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          <div className="max-w-2xl min-h-[520px] flex flex-col justify-center py-12 lg:py-20">
+          <div className="max-w-2xl min-h-[440px] flex flex-col justify-center py-10 lg:py-16">
             
-            <div className="space-y-6">
+            <div className="space-y-5">
               
               {/* Overline */}
               <div className="text-xs font-bold tracking-[0.18em] text-[#FF5500] uppercase">
@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               <h1 className="text-[48px] sm:text-[60px] lg:text-[72px] font-black text-white leading-[1.05] tracking-tight">
                 Место для игр,<br />
                 кино и встреч<br />
-                с друзьями <span className="text-[#FF5500]">в Самаре</span>
+                с друзьями в <span className="text-[#FF5500]">Самаре</span>
               </h1>
 
               {/* Subtitle */}
@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                   rel="noopener noreferrer"
                   className="btn-secondary px-6 py-4 text-[15px] font-semibold flex items-center justify-center gap-2.5 rounded-xl border border-white/10"
                 >
-                  <div className="w-6 h-6 rounded-full bg-[#2787F5] flex items-center justify-center text-[11px] font-black text-white flex-shrink-0">
+                  <div className="w-6 h-6 flex items-center justify-center text-[12px] font-black text-white flex-shrink-0">
                     VK
                   </div>
                   <span>Перейти во ВКонтакте</span>
