@@ -6,7 +6,7 @@ interface ContactsSectionProps {
 }
 
 export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking }) => {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -162,7 +162,7 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
           </div>
 
           {/* Booking Callout Card — matches reference: large U neon on the right */}
-          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative border-[#FF5500]/40 shadow-[0_0_40px_rgba(255,85,0,0.15)] mt-6 lg:mt-0">
+          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative border-[#FF5500]/40 shadow-[0_0_40px_rgba(255,85,0,0.15)] mt-6 lg:mt-0 overflow-hidden">
             
             <div className="relative z-10 max-w-[65%]">
               <h3 className="text-xl sm:text-[26px] font-black text-white mb-2 leading-snug whitespace-nowrap">
@@ -174,8 +174,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
             </div>
 
             {/* Large Glowing Neon 'U' Symbol — white color, bleeding top and right */}
-            <div className="absolute -right-4 -top-8 pointer-events-none hidden sm:block z-0">
-              <div className="w-28 h-40 border-l-[6px] border-r-[6px] border-b-[6px] border-t-0 border-white rounded-b-[44px] shadow-[0_0_20px_4px_rgba(255,255,255,0.4),inset_0_0_15px_rgba(255,255,255,0.3)] opacity-90" />
+            <div className="absolute right-0 top-0 bottom-0 pointer-events-none hidden sm:flex items-center justify-end z-0 translate-x-4 -translate-y-4">
+              <div className="w-32 h-44 border-l-[3px] border-r-[3px] border-b-[3px] border-t-0 border-white/40 rounded-b-[60px]" />
             </div>
 
             <div className="space-y-3 pt-6 relative z-10">
