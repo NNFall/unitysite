@@ -119,8 +119,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
               />
             </div>
 
-            <div className="p-4 bg-[#121824] border-t border-white/10 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center text-xs flex-shrink-0">
+            <div className="p-3.5 bg-[#121824] border-t border-white/10 flex items-center gap-3">
+              <div className="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center text-xs flex-shrink-0">
                 P
               </div>
               <div>
@@ -170,8 +170,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
             })}
           </div>
 
-          {/* Booking Callout Card (6 cols matching reference) */}
-          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border-[#FF5500]/30 shadow-glow-orange">
+          {/* Booking Callout Card (6 cols matching reference with Glowing Neon 'U') */}
+          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border-[#FF5500]/40 shadow-[0_0_35px_rgba(255,85,0,0.15)]">
             
             <div className="relative z-10">
               <h3 className="text-2xl font-black text-white mb-2">
@@ -182,13 +182,13 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
               </p>
             </div>
 
-            {/* Neon 'U' graphic on right */}
-            <div className="absolute right-6 top-1/2 -translate-y-1/2 w-28 h-36 border-4 border-[#FF5500] rounded-b-full opacity-30 shadow-[0_0_40px_#FF5500] pointer-events-none hidden sm:block" />
+            {/* Glowing Neon 'U' Symbol */}
+            <div className="absolute right-6 top-6 w-24 h-28 border-4 border-[#FF5500] rounded-b-[40px] opacity-70 shadow-[0_0_25px_#FF5500] pointer-events-none hidden sm:block" />
 
             <div className="space-y-3 pt-6 relative z-10">
               <button
                 onClick={onOpenBooking}
-                className="btn-primary w-full py-4 text-sm font-bold flex items-center justify-center gap-2"
+                className="btn-primary w-full py-4 text-sm font-bold flex items-center justify-center gap-2 shadow-glow-orange cursor-pointer"
               >
                 <span>Забронировать стол</span>
                 <ArrowRight size={16} weight="bold" />

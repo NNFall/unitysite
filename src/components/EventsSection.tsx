@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Trophy, FilmStrip, Users, ArrowRight, CaretLeft, CaretRight, Star, Armchair, Quotes } from '@phosphor-icons/react';
 
 interface EventsSectionProps {
@@ -6,6 +6,8 @@ interface EventsSectionProps {
 }
 
 export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
   return (
     <section id="events" className="py-20 relative bg-[#0B0E14] text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,15 +30,31 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Left Featured Card (Дни рождения и праздники) */}
-          <div className="lg:col-span-7 ref-card overflow-hidden relative flex flex-col justify-between group min-h-[420px]">
+          <div className="lg:col-span-7 ref-card overflow-hidden relative flex flex-col justify-between group min-h-[440px]">
             <div className="absolute inset-0 bg-zinc-900">
               <img
                 src="/assets/ref/event_birthday.jpg"
                 alt="Дни рождения и праздники в UNITY"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121824] via-[#121824]/60 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#121824] via-[#121824]/50 to-black/30" />
             </div>
+
+            {/* Slider Arrow Controls */}
+            <button
+              onClick={() => setActiveSlide((prev) => (prev > 0 ? prev - 1 : 3))}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center z-20 hover:bg-black/80 transition-colors"
+              aria-label="Назад"
+            >
+              <CaretLeft size={18} />
+            </button>
+            <button
+              onClick={() => setActiveSlide((prev) => (prev < 3 ? prev + 1 : 0))}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center z-20 hover:bg-black/80 transition-colors"
+              aria-label="Вперед"
+            >
+              <CaretRight size={18} />
+            </button>
 
             {/* Top Badge */}
             <div className="relative p-6 z-10">
@@ -65,10 +83,12 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
 
                 {/* Slider Dots */}
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF5500]" />
-                  <span className="w-2 h-2 rounded-full bg-white/20" />
-                  <span className="w-2 h-2 rounded-full bg-white/20" />
-                  <span className="w-2 h-2 rounded-full bg-white/20" />
+                  {[0, 1, 2, 3].map((idx) => (
+                    <span
+                      key={idx}
+                      className={`rounded-full transition-all ${activeSlide === idx ? 'w-2.5 h-2.5 bg-[#FF5500]' : 'w-2 h-2 bg-white/20'}`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -78,7 +98,10 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
           <div className="lg:col-span-5 flex flex-col justify-between gap-4">
             
             {/* Card 1: Турниры */}
-            <div className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all">
+            <div
+              onClick={onOpenBooking}
+              className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all flex-1"
+            >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-[#FF5500]/15 flex items-center justify-center text-[#FF5500] flex-shrink-0">
                   <Trophy size={24} weight="fill" />
@@ -90,15 +113,19 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
                   <p className="text-xs text-gray-400 mt-0.5 leading-relaxed line-clamp-2">
                     Игровые турниры по PS5, бильярду и настолкам с призами и рейтингами.
                   </p>
+                  <ArrowRight size={16} className="text-[#FF5500] mt-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-              <div className="w-20 h-16 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
+              <div className="w-24 h-18 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
                 <img src="/assets/ref/event_tournaments.jpg" alt="Турниры" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Card 2: Киновечера */}
-            <div className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all">
+            <div
+              onClick={onOpenBooking}
+              className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all flex-1"
+            >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-cyan-500/15 flex items-center justify-center text-cyan-400 flex-shrink-0">
                   <FilmStrip size={24} weight="fill" />
@@ -110,15 +137,19 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
                   <p className="text-xs text-gray-400 mt-0.5 leading-relaxed line-clamp-2">
                     Большой экран, объёмный звук и уютная атмосфера для отличного кино.
                   </p>
+                  <ArrowRight size={16} className="text-[#FF5500] mt-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-              <div className="w-20 h-16 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
+              <div className="w-24 h-18 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
                 <img src="/assets/ref/event_movies.jpg" alt="Киновечера" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Card 3: Встречи с друзьями */}
-            <div className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all">
+            <div
+              onClick={onOpenBooking}
+              className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all flex-1"
+            >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-2xl bg-amber-500/15 flex items-center justify-center text-amber-400 flex-shrink-0">
                   <Users size={24} weight="fill" />
@@ -130,9 +161,10 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
                   <p className="text-xs text-gray-400 mt-0.5 leading-relaxed line-clamp-2">
                     Бильярд, настолки, PS5 и отличная компания — всё для вашего вечера.
                   </p>
+                  <ArrowRight size={16} className="text-[#FF5500] mt-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-              <div className="w-20 h-16 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
+              <div className="w-24 h-18 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
                 <img src="/assets/ref/event_friends.jpg" alt="Встречи с друзьями" className="w-full h-full object-cover" />
               </div>
             </div>
@@ -141,7 +173,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
 
         </div>
 
-        {/* Bottom Row: 3 Social Proof Cards matching Reference */}
+        {/* Bottom Row: 3 Social Proof Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           
           {/* Card 1: Что говорят гости */}
@@ -207,7 +239,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
             </div>
 
             {/* Background Phone Mockup Graphic */}
-            <div className="absolute right-0 bottom-0 w-28 h-32 pointer-events-none opacity-80">
+            <div className="absolute right-0 bottom-0 w-28 h-32 pointer-events-none opacity-90">
               <img src="/assets/ref/vk_phone_mockup.png" alt="VK Phone" className="w-full h-full object-contain object-bottom-right" />
             </div>
           </div>
