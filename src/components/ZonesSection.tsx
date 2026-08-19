@@ -1,5 +1,5 @@
 import React from 'react';
-import { GameController, Television, Armchair, DiceFive, ArrowRight, HourglassMedium, Coffee, Star } from '@phosphor-icons/react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '../utils/motion';
 
@@ -70,8 +70,7 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
-          {zones.map((zone) => {
-            const Icon = zone.icon;
+          {zones.map((zone, index) => {
             return (
               <motion.div
                 variants={fadeInUp}
@@ -90,11 +89,11 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
                 </div>
 
                 <div className="relative z-10 p-6 h-full flex flex-col justify-end pt-32">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/20 group-hover:bg-[#FF5500] transition-colors duration-300">
-                    <Icon size={24} weight="fill" />
+                  <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 mb-4 opacity-70 group-hover:from-orange-400 group-hover:to-rose-600 transition-all font-display">
+                    0{index + 1}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#FF5500] transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#FF5500] transition-colors font-display">
                     {zone.name}
                   </h3>
                   
@@ -103,7 +102,7 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
                   </p>
 
                   <div className="mt-5 flex items-center gap-2 text-[#FF5500] font-bold text-sm opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
-                    Подробнее <ArrowRight size={16} />
+                    Подробнее →
                   </div>
                 </div>
               </motion.div>
@@ -115,8 +114,8 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
         <div className="mt-12 p-5 sm:p-6 rounded-2xl bg-[#121824]/90 border border-white/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
           
           <div className="flex items-center gap-4 p-2">
-            <div className="w-11 h-11 rounded-full bg-[#1e2a3a] flex items-center justify-center text-cyan-400 flex-shrink-0">
-              <HourglassMedium size={20} weight="fill" />
+            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center text-cyan-400 flex-shrink-0 font-display font-black">
+              1
             </div>
             <div>
               <div className="font-bold text-white text-[13px] mb-0.5">Без пробкового сбора</div>
@@ -125,8 +124,8 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
           </div>
 
           <div className="flex items-center gap-4 p-2">
-            <div className="w-11 h-11 rounded-full bg-[#1e2a3a] flex items-center justify-center text-amber-400 flex-shrink-0">
-              <Coffee size={20} weight="fill" />
+            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-600/20 flex items-center justify-center text-amber-400 flex-shrink-0 font-display font-black">
+              2
             </div>
             <div>
               <div className="font-bold text-white text-[13px] mb-0.5">Своя еда и напитки</div>
@@ -135,8 +134,8 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
           </div>
 
           <div className="flex items-center gap-4 p-2">
-            <div className="w-11 h-11 rounded-full bg-[#1e2a3a] flex items-center justify-center text-blue-400 flex-shrink-0">
-              <span className="font-bold text-sm">М</span>
+            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500/20 to-indigo-600/20 flex items-center justify-center text-blue-400 flex-shrink-0 font-display font-black">
+              3
             </div>
             <div>
               <div className="font-bold text-white text-[13px] mb-0.5">Рядом с метро</div>
@@ -145,8 +144,8 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
           </div>
 
           <div className="flex items-center gap-4 p-2">
-            <div className="w-11 h-11 rounded-full bg-[#1e2a3a] flex items-center justify-center text-emerald-400 flex-shrink-0">
-              <Star size={20} weight="fill" />
+            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-600/20 flex items-center justify-center text-emerald-400 flex-shrink-0 font-display font-black">
+              4
             </div>
             <div>
               <div className="font-bold text-white text-[13px] mb-0.5">Уютная атмосфера</div>
@@ -163,7 +162,6 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
             className="btn-primary w-[380px] max-w-full py-4 text-[15px] font-bold flex items-center justify-center gap-2 shadow-glow-orange rounded-xl"
           >
             <span>Смотреть все зоны</span>
-            <ArrowRight size={18} weight="bold" />
           </button>
         </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin, Coffee, Star, GameController, FilmStrip, Users } from '@phosphor-icons/react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '../utils/motion';
 
@@ -121,39 +121,41 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-3 gap-5"
         >
-          
-          <motion.div variants={fadeInUp} className="p-6 flex items-start gap-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FF5500] to-[#FF2200] flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-[#FF5500]/20">
-              <GameController size={26} weight="fill" />
+          <motion.div variants={fadeInUp} className="p-6 sm:p-8 flex items-start gap-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/20 blur-[50px] rounded-full group-hover:bg-orange-500/40 transition-colors" />
+            <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-orange-400 to-rose-600 opacity-80 font-display">
+              01
             </div>
-            <div>
-              <h3 className="text-[16px] font-bold text-white tracking-wide">Игры</h3>
-              <p className="text-[14px] text-gray-400 mt-1">
-                PS5, настолки и приставки
+            <div className="z-10 relative mt-1">
+              <h3 className="text-[20px] font-black text-white tracking-wide font-display">Игры & PS5</h3>
+              <p className="text-[14px] text-gray-400 mt-2 leading-relaxed">
+                Последние эксклюзивы и сотни настолок для любых компаний.
               </p>
             </div>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="p-6 flex items-start gap-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-cyan-500/20">
-              <FilmStrip size={26} weight="fill" />
+          <motion.div variants={fadeInUp} className="p-6 sm:p-8 flex items-start gap-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full group-hover:bg-cyan-500/40 transition-colors" />
+            <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-blue-600 opacity-80 font-display">
+              02
             </div>
-            <div>
-              <h3 className="text-[16px] font-bold text-white tracking-wide">Кинозал</h3>
-              <p className="text-[14px] text-gray-400 mt-1">
-                Большой экран и комфорт
+            <div className="z-10 relative mt-1">
+              <h3 className="text-[20px] font-black text-white tracking-wide font-display">Кинозал</h3>
+              <p className="text-[14px] text-gray-400 mt-2 leading-relaxed">
+                Огромный экран, 4K проектор и погружающий объёмный звук.
               </p>
             </div>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="p-6 flex items-start gap-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white flex-shrink-0 shadow-lg shadow-amber-500/20">
-              <Users size={26} weight="fill" />
+          <motion.div variants={fadeInUp} className="p-6 sm:p-8 flex items-start gap-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl hover:bg-white/10 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 blur-[50px] rounded-full group-hover:bg-purple-500/40 transition-colors" />
+            <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-pink-600 opacity-80 font-display">
+              03
             </div>
-            <div>
-              <h3 className="text-[16px] font-bold text-white tracking-wide">Компаниям</h3>
-              <p className="text-[14px] text-gray-400 mt-1">
-                Отдыхайте вместе
+            <div className="z-10 relative mt-1">
+              <h3 className="text-[20px] font-black text-white tracking-wide font-display">VIP Зоны</h3>
+              <p className="text-[14px] text-gray-400 mt-2 leading-relaxed">
+                Закрытые комнаты для дней рождений и шумных тусовок.
               </p>
             </div>
           </motion.div>
