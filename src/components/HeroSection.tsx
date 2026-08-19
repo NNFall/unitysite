@@ -156,9 +156,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
                 Отдыхайте вместе
               </p>
             </div>
-          </div>
-
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
