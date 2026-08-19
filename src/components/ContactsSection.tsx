@@ -113,20 +113,20 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
           </div>
 
           {/* Col 2: Map Card (4 cols) */}
-          <div className="lg:col-span-4 ref-card overflow-hidden group">
+          <div className="lg:col-span-4 ref-card overflow-hidden group min-h-[400px]">
             <img
               src="/assets/ref/map_park_druzhba.jpg"
               alt="Карта парка Дружба Самара"
-              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 min-h-[300px]"
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             />
           </div>
 
           {/* Col 3: Facade Photo (4 cols) */}
-          <div className="lg:col-span-4 ref-card overflow-hidden relative group">
+          <div className="lg:col-span-4 ref-card overflow-hidden relative group min-h-[400px]">
             <img
               src="/assets/ref/facade_night_neon.jpg"
               alt="Вход в UNITY Самара ночью"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 min-h-[300px]"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14]/60 via-transparent to-transparent pointer-events-none" />
           </div>
@@ -134,7 +134,7 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
         </div>
 
         {/* Bottom Row: FAQ + Booking Callout Box */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-10">
           
           {/* FAQ Accordion (6 cols) */}
           <div className="lg:col-span-6 space-y-3">
@@ -152,7 +152,7 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
                     {isOpen ? <CaretUp size={16} className="text-[#FF5500]" /> : <CaretDown size={16} className="text-gray-400" />}
                   </button>
                   {isOpen && (
-                    <div className="px-4 pb-4 text-xs text-gray-400 leading-relaxed border-t border-white/5 pt-2">
+                    <div className="px-4 pb-4 text-[13px] text-gray-400 leading-relaxed border-t border-white/5 pt-2">
                       {item.a}
                     </div>
                   )}
@@ -162,20 +162,20 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
           </div>
 
           {/* Booking Callout Card — matches reference: large U neon on the right */}
-          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border-[#FF5500]/40 shadow-[0_0_40px_rgba(255,85,0,0.2)]">
+          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative border-[#FF5500]/40 shadow-[0_0_40px_rgba(255,85,0,0.15)] mt-6 lg:mt-0">
             
-            <div className="relative z-10 max-w-[60%]">
-              <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-snug whitespace-nowrap">
+            <div className="relative z-10 max-w-[65%]">
+              <h3 className="text-xl sm:text-[26px] font-black text-white mb-2 leading-snug whitespace-nowrap">
                 Забронируйте стол заранее
               </h3>
-              <p className="text-[13px] text-gray-300 leading-relaxed">
+              <p className="text-[14px] text-gray-300 leading-relaxed">
                 Мы поможем подобрать удобное время и зону для вашей компании.
               </p>
             </div>
 
-            {/* Large Glowing Neon 'U' Symbol — fully visible, not clipped */}
-            <div className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
-              <div className="w-24 h-32 border-l-[5px] border-r-[5px] border-b-[5px] border-t-0 border-[#FF5500] rounded-b-[44px] shadow-[0_0_30px_8px_rgba(255,85,0,0.6),inset_0_0_20px_rgba(255,85,0,0.1)]" />
+            {/* Large Glowing Neon 'U' Symbol — white color, bleeding top and right */}
+            <div className="absolute -right-4 -top-8 pointer-events-none hidden sm:block z-0">
+              <div className="w-28 h-40 border-l-[6px] border-r-[6px] border-b-[6px] border-t-0 border-white rounded-b-[44px] shadow-[0_0_20px_4px_rgba(255,255,255,0.4),inset_0_0_15px_rgba(255,255,255,0.3)] opacity-90" />
             </div>
 
             <div className="space-y-3 pt-6 relative z-10">

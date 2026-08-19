@@ -46,17 +46,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="hidden sm:flex items-center gap-5">
           <a
             href="tel:+79879500018"
-            className="flex items-center gap-2 text-sm font-semibold text-gray-200 hover:text-[#FF5500] transition-colors"
+            className="flex items-center gap-2 text-[14px] font-bold text-white hover:text-[#FF5500] transition-colors"
           >
-            <Phone size={16} weight="bold" className="text-[#FF5500]" />
+            <Phone size={18} weight="regular" className="text-white/80" />
             <span>+7 (987) 950-00-18</span>
           </a>
 
           <button
             onClick={onOpenBooking}
-            className="px-5 py-2.5 rounded-xl border border-[#FF5500] text-[#FF5500] hover:bg-[#FF5500] hover:text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200"
+            className="px-6 py-2 rounded-xl border-2 border-[#FF5500] bg-transparent text-[#FF5500] hover:bg-[#FF5500]/10 text-[14px] font-bold transition-all duration-200"
           >
-            Забронировать
+            ЗАБРОНИРОВАТЬ
           </button>
         </div>
 
