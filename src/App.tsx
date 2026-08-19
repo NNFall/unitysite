@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { ZonesSection } from './components/ZonesSection';
@@ -6,10 +7,20 @@ import { EventsSection } from './components/EventsSection';
 import { ContactsSection } from './components/ContactsSection';
 import { BookingModal } from './components/BookingModal';
 import { Footer } from './components/Footer';
+import { Loader } from './components/Loader';
 
 export const App: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedZone, setSelectedZone] = useState<string | undefined>(undefined);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading time for smooth visual entry
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleOpenBooking = (zone?: string) => {
     setSelectedZone(zone);
@@ -23,6 +34,10 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0B0E14] text-[#F1F5F9] flex flex-col selection:bg-[#FF5500] selection:text-white">
+      
+      <AnimatePresence>
+        {isLoading && <Loader />}
+      </AnimatePresence>
       {/* 1. Sticky Navigation Header */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
 

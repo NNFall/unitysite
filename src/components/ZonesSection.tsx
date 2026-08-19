@@ -1,5 +1,7 @@
 import React from 'react';
 import { GameController, Television, Armchair, DiceFive, ArrowRight, HourglassMedium, Coffee, Star } from '@phosphor-icons/react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '../utils/motion';
 
 interface ZonesSectionProps {
   onSelectZone: (zoneName: string) => void;
@@ -61,47 +63,53 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <motion.div 
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+        >
           {zones.map((zone) => {
             const Icon = zone.icon;
             return (
-              <div
+              <motion.div
+                variants={fadeInUp}
                 key={zone.id}
                 onClick={() => onSelectZone(zone.name)}
-                className="ref-card overflow-hidden cursor-pointer group flex flex-col justify-between rounded-2xl"
+                className="ref-card overflow-hidden cursor-pointer group flex flex-col justify-between rounded-2xl relative"
               >
-                <div>
-                  {/* Card Image */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900">
-                    <img
-                      src={zone.img}
-                      alt={zone.name}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#121824] via-transparent to-transparent opacity-90" />
+                {/* Image takes full background in premium style */}
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src={zone.img}
+                    alt={zone.name}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-40 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-60"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#121824] via-[#121824]/80 to-transparent" />
+                </div>
+
+                <div className="relative z-10 p-6 h-full flex flex-col justify-end pt-32">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 border border-white/20 group-hover:bg-[#FF5500] transition-colors duration-300">
+                    <Icon size={24} weight="fill" />
                   </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#FF5500] transition-colors">
+                    {zone.name}
+                  </h3>
+                  
+                  <p className="text-sm text-gray-300 leading-relaxed min-h-[40px]">
+                    {zone.desc}
+                  </p>
 
-                  {/* Card Content */}
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <Icon size={22} weight="fill" className="text-[#FF5500]" />
-                        <h3 className="text-[17px] font-bold text-white group-hover:text-[#FF5500] transition-colors">
-                          {zone.name}
-                        </h3>
-                      </div>
-                      <ArrowRight size={16} className="text-gray-400 group-hover:text-[#FF5500] transform group-hover:translate-x-1 transition-all" />
-                    </div>
-
-                    <p className="text-[14px] text-gray-400 leading-relaxed">
-                      {zone.desc}
-                    </p>
+                  <div className="mt-5 flex items-center gap-2 text-[#FF5500] font-bold text-sm opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                    Подробнее <ArrowRight size={16} />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Value Bar under Cards */}
         <div className="mt-12 p-5 sm:p-6 rounded-2xl bg-[#121824]/90 border border-white/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">

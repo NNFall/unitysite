@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Trophy, FilmStrip, Users, ArrowRight, CaretLeft, CaretRight, Star, Armchair, Quotes } from '@phosphor-icons/react';
-
+import { motion } from 'framer-motion';
 interface EventsSectionProps {
   onOpenBooking: () => void;
 }
@@ -94,80 +94,85 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
             </div>
           </div>
 
-          {/* Right 3 Stacked Cards */}
+          {/* Right 3 Stacked Cards (Journal Style) */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-4">
             
             {/* Card 1: Турниры */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               onClick={onOpenBooking}
-              className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all flex-1"
+              className="relative overflow-hidden rounded-2xl flex-1 group cursor-pointer"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#FF5500]/15 flex items-center justify-center text-[#FF5500] flex-shrink-0">
-                  <Trophy size={24} weight="fill" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white group-hover:text-[#FF5500] transition-colors">
-                    Турниры
-                  </h4>
-                  <p className="text-xs text-gray-400 mt-0.5 leading-relaxed line-clamp-2">
-                    Игровые турниры по PS5, бильярду и настолкам с призами и рейтингами.
-                  </p>
-                  <ArrowRight size={16} className="text-[#FF5500] mt-2 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-zinc-900">
+                <img src="/assets/ref/event_tournaments.jpg" alt="Турниры" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 mix-blend-screen" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#121824] via-[#121824]/80 to-transparent" />
+              </div>
+              <div className="relative p-5 sm:p-6 h-full flex flex-col justify-center z-10 border border-white/5 rounded-2xl group-hover:border-[#FF5500]/40 transition-colors">
+                <h4 className="text-xl font-bold text-white group-hover:text-[#FF5500] transition-colors">
+                  Турниры
+                </h4>
+                <p className="text-sm text-gray-300 mt-2 leading-relaxed max-w-[80%]">
+                  Игровые батлы по PS5 и бильярду с призами.
+                </p>
+                <div className="mt-4 flex items-center text-[#FF5500] text-sm font-bold gap-2 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                  Участвовать <ArrowRight size={16} />
                 </div>
               </div>
-              <div className="w-24 h-18 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
-                <img src="/assets/ref/event_tournaments.jpg" alt="Турниры" className="w-full h-full object-cover" />
-              </div>
-            </div>
+            </motion.div>
 
             {/* Card 2: Киновечера */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.1 }}
               onClick={onOpenBooking}
-              className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all flex-1"
+              className="relative overflow-hidden rounded-2xl flex-1 group cursor-pointer"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-cyan-500/15 flex items-center justify-center text-cyan-400 flex-shrink-0">
-                  <FilmStrip size={24} weight="fill" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white group-hover:text-[#FF5500] transition-colors">
-                    Киновечера
-                  </h4>
-                  <p className="text-xs text-gray-400 mt-0.5 leading-relaxed line-clamp-2">
-                    Большой экран, объёмный звук и уютная атмосфера для отличного кино.
-                  </p>
-                  <ArrowRight size={16} className="text-[#FF5500] mt-2 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-zinc-900">
+                <img src="/assets/ref/event_movies.jpg" alt="Киновечера" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 mix-blend-screen" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#121824] via-[#121824]/80 to-transparent" />
+              </div>
+              <div className="relative p-5 sm:p-6 h-full flex flex-col justify-center z-10 border border-white/5 rounded-2xl group-hover:border-[#FF5500]/40 transition-colors">
+                <h4 className="text-xl font-bold text-white group-hover:text-[#FF5500] transition-colors">
+                  Киновечера
+                </h4>
+                <p className="text-sm text-gray-300 mt-2 leading-relaxed max-w-[80%]">
+                  Большой экран, объёмный звук и уютная атмосфера.
+                </p>
+                <div className="mt-4 flex items-center text-[#FF5500] text-sm font-bold gap-2 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                  Смотреть афишу <ArrowRight size={16} />
                 </div>
               </div>
-              <div className="w-24 h-18 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
-                <img src="/assets/ref/event_movies.jpg" alt="Киновечера" className="w-full h-full object-cover" />
-              </div>
-            </div>
+            </motion.div>
 
             {/* Card 3: Встречи с друзьями */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.2 }}
               onClick={onOpenBooking}
-              className="ref-card p-4 sm:p-5 flex items-center justify-between gap-4 group cursor-pointer hover:border-[#FF5500]/40 transition-all flex-1"
+              className="relative overflow-hidden rounded-2xl flex-1 group cursor-pointer"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/15 flex items-center justify-center text-amber-400 flex-shrink-0">
-                  <Users size={24} weight="fill" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white group-hover:text-[#FF5500] transition-colors">
-                    Встречи с друзьями
-                  </h4>
-                  <p className="text-xs text-gray-400 mt-0.5 leading-relaxed line-clamp-2">
-                    Бильярд, настолки, PS5 и отличная компания — всё для вашего вечера.
-                  </p>
-                  <ArrowRight size={16} className="text-[#FF5500] mt-2 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-zinc-900">
+                <img src="/assets/ref/event_friends.jpg" alt="Встречи с друзьями" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 mix-blend-screen" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#121824] via-[#121824]/80 to-transparent" />
+              </div>
+              <div className="relative p-5 sm:p-6 h-full flex flex-col justify-center z-10 border border-white/5 rounded-2xl group-hover:border-[#FF5500]/40 transition-colors">
+                <h4 className="text-xl font-bold text-white group-hover:text-[#FF5500] transition-colors">
+                  Встречи с друзьями
+                </h4>
+                <p className="text-sm text-gray-300 mt-2 leading-relaxed max-w-[80%]">
+                  Отличная компания, настолки и PS5.
+                </p>
+                <div className="mt-4 flex items-center text-[#FF5500] text-sm font-bold gap-2 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                  Забронировать стол <ArrowRight size={16} />
                 </div>
               </div>
-              <div className="w-24 h-18 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 hidden sm:block">
-                <img src="/assets/ref/event_friends.jpg" alt="Встречи с друзьями" className="w-full h-full object-cover" />
-              </div>
-            </div>
+            </motion.div>
 
           </div>
 
@@ -239,9 +244,13 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ onOpenBooking }) =
             </div>
 
             {/* Background Phone Mockup Graphic */}
-            <div className="absolute right-0 bottom-0 w-28 h-32 pointer-events-none opacity-90">
-              <img src="/assets/ref/vk_phone_mockup.png" alt="VK Phone" className="w-full h-full object-contain object-bottom-right" />
-            </div>
+            <motion.div 
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -right-6 -bottom-8 w-36 h-44 pointer-events-none opacity-100 z-0"
+            >
+              <img src="/assets/ref/vk_phone_mockup.png" alt="VK Phone" className="w-full h-full object-contain object-bottom-right drop-shadow-2xl" />
+            </motion.div>
           </div>
 
           {/* Card 3: Статистика доверия */}

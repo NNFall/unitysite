@@ -173,9 +173,36 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
               </p>
             </div>
 
-            {/* Large Glowing Neon 'U' Symbol — white color, bleeding top and right */}
-            <div className="absolute right-0 top-0 bottom-0 pointer-events-none hidden sm:flex items-center justify-end z-0 translate-x-4 -translate-y-4">
-              <div className="w-32 h-44 border-l-[3px] border-r-[3px] border-b-[3px] border-t-0 border-white/40 rounded-b-[60px]" />
+            {/* Animated Glowing Neon 'U' Symbol */}
+            <div className="absolute right-0 top-0 bottom-0 pointer-events-none hidden sm:flex items-center justify-end z-0 translate-x-6 -translate-y-6">
+              <svg 
+                width="120" 
+                height="180" 
+                viewBox="0 0 120 180" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="opacity-80"
+              >
+                <path 
+                  d="M10 0V110C10 137.614 32.3858 160 60 160C87.6142 160 110 137.614 110 110V0" 
+                  stroke="white" 
+                  strokeWidth="6" 
+                  strokeLinecap="round"
+                  className="animate-pulse shadow-glow"
+                  style={{
+                    filter: "drop-shadow(0 0 12px rgba(255,255,255,0.6)) drop-shadow(0 0 30px rgba(255,255,255,0.2))",
+                    strokeDasharray: "400",
+                    strokeDashoffset: "0",
+                    animation: "dash 4s ease-in-out infinite alternate"
+                  }}
+                />
+              </svg>
+              <style>{`
+                @keyframes dash {
+                  0% { stroke-dashoffset: 400; }
+                  100% { stroke-dashoffset: 0; }
+                }
+              `}</style>
             </div>
 
             <div className="space-y-3 pt-6 relative z-10">
