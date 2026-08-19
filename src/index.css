@@ -2,49 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
+@layer base {
+  body {
+    background-color: #0B0E14;
+    color: #F1F5F9;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
 }
 
-body {
-  background-color: #09090b;
-  overflow-x: hidden;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #09090b;
-}
-::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
-}
-
-/* Glassmorphism utility */
-.glass-panel {
-  background: rgba(18, 18, 22, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+.ref-card {
+  background: #121824;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  transition: all 0.25s ease-in-out;
 }
 
-.glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.glass-panel-hover:hover {
-  background: rgba(24, 24, 30, 0.85);
-  border-color: rgba(255, 107, 0, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(255, 107, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+.ref-card:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
 }
 
-/* Glow effects */
-.glow-text-orange {
-  text-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+.ref-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9999px;
+}
+
+.btn-primary {
+  background: #FF5500;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 0.875rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.35);
+}
+
+.btn-primary:hover {
+  background: #FF6A1A;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 28px rgba(255, 85, 0, 0.45);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
 }
