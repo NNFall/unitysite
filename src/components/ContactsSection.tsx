@@ -28,35 +28,38 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
   ];
 
   return (
-    <section id="contacts" className="py-20 relative bg-[#090C10] border-t border-white/5 text-left">
+    <section id="contacts" className="py-16 relative bg-[#090C10] border-t border-white/5 text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="mb-12">
-          <div className="text-xs sm:text-sm font-bold tracking-widest text-[#FF5500] uppercase mb-2">
-            UNITY — КОНТАКТЫ
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-            Как нас найти <br />
-            <span className="text-[#FF5500]">и забронировать</span>
-          </h2>
+        {/* Overline above everything */}
+        <div className="text-xs font-bold tracking-[0.18em] text-[#FF5500] uppercase mb-3">
+          UNITY — КОНТАКТЫ
         </div>
 
-        {/* Top 3 Columns: Contacts List + Map Card + Facade Photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-10">
+        {/* Top 3 Columns: Left=Header+Contacts, Middle=Map, Right=Facade — exactly as in reference */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-8">
           
-          {/* Col 1: Contacts List (4 cols) */}
-          <div className="lg:col-span-4 ref-card p-6 flex flex-col justify-between space-y-4">
+          {/* Col 1: Title + Contacts List (4 cols) — no card border, just plain list */}
+          <div className="lg:col-span-4 flex flex-col justify-between">
             
-            <div className="space-y-4">
+            {/* Title inline with this column — matches reference where title is top-left */}
+            <div className="mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-white leading-[1.06]">
+                Как нас найти<br />
+                <span className="text-[#FF5500]">и забронировать</span>
+              </h2>
+            </div>
+
+            {/* Contacts list — no card, plain icon + text */}
+            <div className="flex flex-col gap-5 flex-grow">
               {/* Address */}
               <div className="flex items-start gap-3.5">
                 <div className="w-8 h-8 rounded-lg bg-[#FF5500]/15 flex items-center justify-center text-[#FF5500] flex-shrink-0 mt-0.5">
                   <MapPin size={18} weight="fill" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-gray-400">Адрес</div>
-                  <div className="text-sm font-bold text-white">Самара, ул. Гагарина, 118</div>
+                  <div className="text-xs font-semibold text-gray-400">Адрес</div>
+                  <div className="text-[15px] font-bold text-white">Самара, ул. Гагарина, 118</div>
                 </div>
               </div>
 
@@ -66,8 +69,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
                   <Train size={18} weight="fill" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-gray-400">Ближайшее метро</div>
-                  <div className="text-sm font-bold text-white">м. Советская — 3 минуты пешком</div>
+                  <div className="text-xs font-semibold text-gray-400">Ближайшее метро</div>
+                  <div className="text-[15px] font-bold text-white">м. Советская — 3 минуты пешком</div>
                 </div>
               </div>
 
@@ -77,8 +80,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
                   <NavigationArrow size={18} weight="fill" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-gray-400">Как добраться</div>
-                  <div className="text-xs text-gray-300 leading-relaxed">Легко добраться на метро, автобусе или автомобиле. Рядом есть парковка.</div>
+                  <div className="text-xs font-semibold text-gray-400">Как добраться</div>
+                  <div className="text-[13px] text-gray-300 leading-relaxed">Легко добраться на метро, автобусе<br />или автомобиле. Рядом есть парковка.</div>
                 </div>
               </div>
 
@@ -88,56 +91,44 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
                   <Clock size={18} weight="fill" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-gray-400">Часы работы</div>
-                  <div className="text-sm font-bold text-white">Ежедневно с 12:00 до 06:00</div>
+                  <div className="text-xs font-semibold text-gray-400">Часы работы</div>
+                  <div className="text-[15px] font-bold text-white">Ежедневно с 12:00 до 06:00</div>
                 </div>
               </div>
-            </div>
 
-            {/* Phone */}
-            <div className="pt-4 border-t border-white/10 flex items-center gap-3.5">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-400 flex-shrink-0">
-                <Phone size={18} weight="fill" />
-              </div>
-              <div>
-                <div className="text-xs font-bold text-gray-400">Телефон</div>
-                <a href="tel:+79879500018" className="text-sm font-bold text-white hover:text-[#FF5500] transition-colors">
-                  +7 (987) 950-00-18
-                </a>
+              {/* Phone */}
+              <div className="flex items-start gap-3.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5">
+                  <Phone size={18} weight="fill" />
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-gray-400">Телефон</div>
+                  <a href="tel:+79879500018" className="text-[15px] font-bold text-white hover:text-[#FF5500] transition-colors">
+                    +7 (987) 950-00-18
+                  </a>
+                </div>
               </div>
             </div>
 
           </div>
 
           {/* Col 2: Map Card (4 cols) */}
-          <div className="lg:col-span-4 ref-card overflow-hidden flex flex-col justify-between relative group">
-            <div className="relative aspect-[4/3] sm:aspect-auto flex-grow bg-zinc-900 overflow-hidden">
-              <img
-                src="/assets/ref/map_park_druzhba.jpg"
-                alt="Карта парка Дружба Самара"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-
-            <div className="p-3.5 bg-[#121824] border-t border-white/10 flex items-center gap-3">
-              <div className="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center text-xs flex-shrink-0">
-                P
-              </div>
-              <div>
-                <div className="text-xs font-bold text-white">Парковка</div>
-                <div className="text-[11px] text-gray-400">Бесплатная парковка рядом с входом</div>
-              </div>
-            </div>
+          <div className="lg:col-span-4 ref-card overflow-hidden group">
+            <img
+              src="/assets/ref/map_park_druzhba.jpg"
+              alt="Карта парка Дружба Самара"
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 min-h-[300px]"
+            />
           </div>
 
-          {/* Col 3: Facade Photo with Glowing Neon (4 cols) */}
+          {/* Col 3: Facade Photo (4 cols) */}
           <div className="lg:col-span-4 ref-card overflow-hidden relative group">
             <img
               src="/assets/ref/facade_night_neon.jpg"
               alt="Вход в UNITY Самара ночью"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 min-h-[260px]"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 min-h-[300px]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14]/80 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0E14]/60 via-transparent to-transparent pointer-events-none" />
           </div>
 
         </div>
@@ -170,20 +161,22 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
             })}
           </div>
 
-          {/* Booking Callout Card (6 cols matching reference with Glowing Neon 'U') */}
-          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border-[#FF5500]/40 shadow-[0_0_35px_rgba(255,85,0,0.15)]">
+          {/* Booking Callout Card — matches reference: large U neon on the right */}
+          <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border-[#FF5500]/40 shadow-[0_0_40px_rgba(255,85,0,0.2)]">
             
-            <div className="relative z-10">
-              <h3 className="text-2xl font-black text-white mb-2">
-                Забронируйте стол заранее
+            <div className="relative z-10 max-w-[55%]">
+              <h3 className="text-2xl sm:text-[26px] font-black text-white mb-2 leading-tight">
+                Забронируйте<br />стол заранее
               </h3>
-              <p className="text-xs sm:text-sm text-gray-300 max-w-md leading-relaxed">
+              <p className="text-[13px] text-gray-300 leading-relaxed">
                 Мы поможем подобрать удобное время и зону для вашей компании.
               </p>
             </div>
 
-            {/* Glowing Neon 'U' Symbol */}
-            <div className="absolute right-6 top-6 w-24 h-28 border-4 border-[#FF5500] rounded-b-[40px] opacity-70 shadow-[0_0_25px_#FF5500] pointer-events-none hidden sm:block" />
+            {/* Large Glowing Neon 'U' Symbol — single div with borders, properly curved */}
+            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
+              <div className="w-28 h-36 border-l-[5px] border-r-[5px] border-b-[5px] border-t-0 border-[#FF5500] rounded-b-[50px] shadow-[0_0_30px_8px_rgba(255,85,0,0.6),inset_0_0_20px_rgba(255,85,0,0.15)]" />
+            </div>
 
             <div className="space-y-3 pt-6 relative z-10">
               <button
