@@ -50,12 +50,12 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
               </h2>
             </div>
 
-            {/* Contacts list — no card, plain icon + text */}
+            {/* Contacts list — monochrome icon style exactly as in reference */}
             <div className="flex flex-col gap-5 flex-grow">
               {/* Address */}
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-[#FF5500]/15 flex items-center justify-center text-[#FF5500] flex-shrink-0 mt-0.5">
-                  <MapPin size={18} weight="fill" />
+                <div className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center text-white/70 flex-shrink-0 mt-0.5">
+                  <MapPin size={18} weight="regular" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-gray-400">Адрес</div>
@@ -65,8 +65,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
 
               {/* Metro */}
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-cyan-500/15 flex items-center justify-center text-cyan-400 flex-shrink-0 mt-0.5">
-                  <Train size={18} weight="fill" />
+                <div className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center text-white/70 flex-shrink-0 mt-0.5">
+                  <Train size={18} weight="regular" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-gray-400">Ближайшее метро</div>
@@ -76,8 +76,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
 
               {/* How to get */}
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center text-blue-400 flex-shrink-0 mt-0.5">
-                  <NavigationArrow size={18} weight="fill" />
+                <div className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center text-white/70 flex-shrink-0 mt-0.5">
+                  <NavigationArrow size={18} weight="regular" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-gray-400">Как добраться</div>
@@ -87,8 +87,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
 
               {/* Hours */}
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center text-amber-400 flex-shrink-0 mt-0.5">
-                  <Clock size={18} weight="fill" />
+                <div className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center text-white/70 flex-shrink-0 mt-0.5">
+                  <Clock size={18} weight="regular" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-gray-400">Часы работы</div>
@@ -98,8 +98,8 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
 
               {/* Phone */}
               <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5">
-                  <Phone size={18} weight="fill" />
+                <div className="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center text-white/70 flex-shrink-0 mt-0.5">
+                  <Phone size={18} weight="regular" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-gray-400">Телефон</div>
@@ -164,18 +164,18 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({ onOpenBooking 
           {/* Booking Callout Card — matches reference: large U neon on the right */}
           <div className="lg:col-span-6 ref-card p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden border-[#FF5500]/40 shadow-[0_0_40px_rgba(255,85,0,0.2)]">
             
-            <div className="relative z-10 max-w-[55%]">
-              <h3 className="text-2xl sm:text-[26px] font-black text-white mb-2 leading-tight">
-                Забронируйте<br />стол заранее
+            <div className="relative z-10 max-w-[60%]">
+              <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-snug whitespace-nowrap">
+                Забронируйте стол заранее
               </h3>
               <p className="text-[13px] text-gray-300 leading-relaxed">
                 Мы поможем подобрать удобное время и зону для вашей компании.
               </p>
             </div>
 
-            {/* Large Glowing Neon 'U' Symbol — single div with borders, properly curved */}
-            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
-              <div className="w-28 h-36 border-l-[5px] border-r-[5px] border-b-[5px] border-t-0 border-[#FF5500] rounded-b-[50px] shadow-[0_0_30px_8px_rgba(255,85,0,0.6),inset_0_0_20px_rgba(255,85,0,0.15)]" />
+            {/* Large Glowing Neon 'U' Symbol — fully visible, not clipped */}
+            <div className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none hidden sm:block">
+              <div className="w-24 h-32 border-l-[5px] border-r-[5px] border-b-[5px] border-t-0 border-[#FF5500] rounded-b-[44px] shadow-[0_0_30px_8px_rgba(255,85,0,0.6),inset_0_0_20px_rgba(255,85,0,0.1)]" />
             </div>
 
             <div className="space-y-3 pt-6 relative z-10">

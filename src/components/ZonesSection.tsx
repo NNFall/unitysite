@@ -83,17 +83,15 @@ export const ZonesSection: React.FC<ZonesSectionProps> = ({ onSelectZone }) => {
                   <div className="p-5">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-xl bg-[#FF5500]/15 flex items-center justify-center text-[#FF5500]">
-                          <Icon size={18} weight="fill" />
-                        </div>
-                        <h3 className="text-base font-bold text-white group-hover:text-[#FF5500] transition-colors">
+                        <Icon size={20} weight="fill" className="text-[#FF5500]" />
+                        <h3 className="text-[16px] font-bold text-white group-hover:text-[#FF5500] transition-colors">
                           {zone.name}
                         </h3>
                       </div>
                       <ArrowRight size={16} className="text-gray-400 group-hover:text-[#FF5500] transform group-hover:translate-x-1 transition-all" />
                     </div>
 
-                    <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                    <p className="text-[13px] text-gray-400 leading-relaxed">
                       {zone.desc}
                     </p>
                   </div>

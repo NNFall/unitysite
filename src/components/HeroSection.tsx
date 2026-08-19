@@ -85,31 +85,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
           </div>
 
-          {/* Right Column: Hero photo — no border card, just rounded image with overlays */}
+          {/* Right Column: Hero photo — true full-bleed, NO card border (as in reference) */}
           <div className="relative h-full min-h-[400px] lg:min-h-[480px] flex items-center">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl group">
+            <div className="relative w-full overflow-hidden shadow-2xl group">
               <img
                 src="/assets/ref/hero_main_lounge.jpg"
                 alt="Интерьер тайм-кафе UNITY Самара"
-                className="w-full h-full object-cover aspect-[16/11] lg:aspect-[4/3] transform group-hover:scale-[1.03] transition-transform duration-700"
+                className="w-full h-full object-cover aspect-[16/11] lg:aspect-[4/3] transform group-hover:scale-[1.03] transition-transform duration-700 rounded-2xl"
               />
-              {/* Dark gradient overlay bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
-
-              {/* Bottom-left overlay badge: Парк Дружба — exactly as in reference */}
-              <div className="absolute bottom-4 left-4 flex flex-col gap-1">
-                <div className="text-[12px] font-semibold text-white/90">
-                  Парк «Дружба» · Самара
-                </div>
-                <div className="text-[11px] font-bold text-[#FF5500]">
-                  Открыто ежедневно до 06:00
-                </div>
-              </div>
-
-              {/* Bottom-right overlay badge: 0₽ Пробка — exactly as in reference */}
-              <div className="absolute bottom-4 right-4 bg-[#FF5500] text-white text-[11px] font-black px-3 py-1.5 rounded-lg shadow-lg">
-                0₽ Пробка
-              </div>
             </div>
           </div>
 
