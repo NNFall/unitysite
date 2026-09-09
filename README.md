@@ -1,32 +1,18 @@
-# React + TypeScript + Vite
+# UNITY · первая версия
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Ранний прототип сайта тайм-кафе UNITY на React, TypeScript и Vite. Сохранён как отдельная итерация проекта, а не как основная версия портфолио.
 
-Currently, two official plugins are available:
+Актуальная реализация: [NNFall/unitysitv2](https://github.com/NNFall/unitysitv2) · [демо](https://kaigo.space/site/unity/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Локальный запуск
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm ci
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Сборка: `npm run build`. Линтер: `npm run lint`.
+
+Исходные заметки шаблона Vite сохранены в [IMPLEMENTATION.md](IMPLEMENTATION.md).
+
+Портфолио-прототип, не заявление об официальном сотрудничестве с заведением. Права на фотографии и бренд нужно проверять отдельно перед использованием материалов.
